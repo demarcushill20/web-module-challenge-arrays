@@ -46,10 +46,22 @@ Use the copy function below to do the following:
 */
 
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(array){
+return [...array];
 }
+console.log('task 1:', copy(originalFlavors));
 
+// This code declares a function named copy that takes an array as a parameter.
+//function copy(array){
+  // Inside the function, a new array is created using the spread syntax.
+  // The spread syntax is used to "spread" the values of the original array into a new array.
+  // This creates a new array with the same elements as the original array.
+  //return [...array];
+//}
+
+// This code calls the copy function and passes in the originalFlavors array as an argument.
+// The return value of the copy function (a new array with the same elements as the original array) is logged to the console.
+//console.log('task 1:', copy(originalFlavors));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -63,10 +75,18 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
- }
-
+// This code defines a function called is31Flavors that takes an array as a parameter.
+function is31Flavors(array){
+  // This line checks if the length of the array is equal to 31.
+  // If the length is equal to 31, the function returns true.
+  if(array.length === 31){
+    return true;
+  // If the length is not equal to 31, the function returns false.
+  }else{
+    return false;
+  }
+}
+console.log('task 2:', is31Flavors(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -82,11 +102,17 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
- }
+// This code defines a function called addFlavor that takes two parameters: an array and a string.
+function addFlavor(array, string){
+  // This line adds the string to the beginning of the array using the unshift method.
+  array.unshift(string)
+  // This line returns the modified array.
+  return array;
+}
 
-
+// This line calls the addFlavor function with originalFlavors as the array parameter and 'Rainbow Sherbert' as the string parameter.
+// The resulting array is logged to the console.
+console.log('task 3:', addFlavor(originalFlavors, 'Rainbow Sherbert'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -100,10 +126,17 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+// This code defines a function called removeLastFlavor that takes an array as a parameter.
+function removeLastFlavor(array){
+  // This line removes the last element from the array using the pop method.
+  array.pop();
+  // This line returns the modified array.
+  return array;
 }
 
+// This line calls the removeLastFlavor function with originalFlavors as the array parameter.
+// The resulting modified array is logged to the console with the string 'task 4:' as a label.
+console.log('task 4:', removeLastFlavor(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -118,10 +151,11 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array, number){
+  return array[number];
 }
 
+console.log('task 5:', getFlavorByIndex(originalFlavors, 2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -138,9 +172,16 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array, flavor){
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === flavor){
+      array.splice(i, 1);
+    } 
+  }
+  return array;
 }
+
+console.log('task 6:', removeFlavorByName(originalFlavors, 'Rocky Road'));
 
 
 
@@ -163,11 +204,17 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array, flavor){
+  let filteredArray = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].includes(flavor)){
+      filteredArray.push(array[i]);
+    }
+  }
+  return filteredArray;
 }
 
-
+console.log('task 7:', filterByWord(originalFlavors, 'Chocolate'));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
